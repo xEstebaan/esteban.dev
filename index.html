@@ -69,16 +69,15 @@
     </section>
 
     <section id="contact" class="contact">
-      <h2 data-i18n="skills.title">Contacto</h2>
-
+      <h2 data-i18n="contact.title">Contacto</h2>
     <form action="https://formspree.io/f/tu-codigo-form" method="POST" class="contact-form">
-  <label for="name">Nombre</label>
+  <label data-i18n="contact.name" for="name">Nombre</label>
   <input type="text" id="name" name="name" required placeholder="Tu nombre">
 
-  <label for="email">Correo</label>
+  <label data-i18n="contact.email" for="email">Correo</label>
   <input type="email" id="email" name="_replyto" required placeholder="tucorreo@ejemplo.com">
 
-  <label for="message">Mensaje</label>
+  <label data-i18n="contact.message" for="message">Mensaje</label>
   <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí..."></textarea>
 
   <!-- Anti-spam hidden field (honeypot) -->
@@ -86,7 +85,7 @@
 
   <!-- Opción: ReCaptcha de Formspree (activable en el panel de Formspree) -->
 
-  <button type="submit">Enviar</button>
+  <button data-i18n="contact.send" type="submit">Enviar</button>
 </form>
 
     </section>
@@ -99,6 +98,38 @@
     </div>
     <p>© 2025 Esteban. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- ======= MENÚ LATERAL MOBILE ======= -->
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+  <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <ul>
+      <li><a href="#" class="mobile-link"><span class="icon">  
+        <!-- Home icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#181b1f" xmlns="http://www.w3.org/2000/svg"><path d="M3 10.75V19a2 2 0 0 0 2 2h3.25a.75.75 0 0 0 .75-.75v-4.5A.75.75 0 0 1 9.75 15h4.5a.75.75 0 0 1 .75.75v4.5c0 .414.336.75.75.75H19a2 2 0 0 0 2-2v-8.25a2 2 0 0 0-.66-1.48l-7-6.3a2 2 0 0 0-2.64 0l-7 6.3A2 2 0 0 0 3 10.75Z" fill="#181b1f"/></svg>
+        </span> <span>Home</span></a></li>
+      <li><a href="#projects" class="mobile-link"><span class="icon">
+        <!-- Code icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </span> <span>Projects</span></a></li>
+      <li><a href="#skills" class="mobile-link"><span class="icon">
+        <!-- Code icon (same as above) -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </span> <span>Skills</span></a></li>
+      <li><a href="#contact" class="mobile-link"><span class="icon">
+        <!-- Mail icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+        </span> <span>Contact</span></a></li>
+      <li><a href="#" class="mobile-link lang-link"><span class="icon">
+        <!-- Globe icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+        </span> <span>Language</span></a></li>
+    </ul>
+  </nav>
 
   <script src="script.js"></script>
 </body>

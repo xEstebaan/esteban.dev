@@ -1,4 +1,6 @@
-/* Reset básico y fuente */
+/* =========================
+   RESET Y TIPOGRAFÍA GLOBAL
+   ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +15,9 @@ body {
   overflow-x: hidden;
 }
 
+/* =========================
+   HEADER Y NAVEGACIÓN
+   ========================= */
 header {
   background: #fff;
   border-bottom: 1px solid #ececec;
@@ -49,6 +54,8 @@ header {
 .nav-links a:hover {
   color: #4f8cff;
 }
+
+/* Botón de currículum en la navegación */
 .btn-resume {
   background: #e9f1fa;
   color: #222;
@@ -62,12 +69,18 @@ header {
   background: #d0e6fa;
 }
 
+/* =========================
+   LAYOUT GENERAL
+   ========================= */
 main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+/* =========================
+   SECCIÓN HERO
+   ========================= */
 .hero {
   display: flex;
   align-items: center;
@@ -76,16 +89,24 @@ main {
   margin-bottom: 2.5rem;
 }
 .hero-img img {
-  width: 220px;
+  display: block;
+  width: 300px; /* Más grande en pantallas grandes */
+  max-width: 100%;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: contain;
   border-radius: 16px;
   background: #f3f6fa;
 }
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 4vw + 1rem, 2.7rem);
   font-weight: 700;
   margin-bottom: 0.5rem;
+  text-align: center;
+  line-height: 1.15;
+  word-break: keep-all;
+  white-space: normal;
 }
 .hero-content h1 span {
   color: #222;
@@ -94,6 +115,8 @@ main {
   margin-bottom: 1.2rem;
   color: #444;
 }
+
+/* Botón principal reutilizable */
 .btn-primary {
   background: #a4c8f8;
   color: #222;
@@ -113,6 +136,9 @@ main {
   color: #fff;
 }
 
+/* =========================
+   SECCIÓN ABOUT
+   ========================= */
 .about {
   margin-bottom: 2.5rem;
 }
@@ -124,6 +150,9 @@ main {
   color: #444;
 }
 
+/* =========================
+   SECCIÓN PROJECTS
+   ========================= */
 .projects {
   margin-bottom: 2.5rem;
 }
@@ -169,6 +198,9 @@ main {
   font-size: 0.97rem;
 }
 
+/* =========================
+   SECCIÓN SKILLS
+   ========================= */
 .skills {
   margin-bottom: 2.5rem;
 }
@@ -190,6 +222,9 @@ main {
   font-weight: 500;
 }
 
+/* =========================
+   SECCIÓN CONTACTO
+   ========================= */
 .contact {
   margin-bottom: 2.5rem;
   padding: 2rem 0;
@@ -198,7 +233,6 @@ main {
   align-items: flex-start;
   background: none;
 }
-
 .contact h2 {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
@@ -207,7 +241,6 @@ main {
   font-weight: 700;
   margin-left: 0.5rem;
 }
-
 .contact-form {
   max-width: 400px;
   width: 100%;
@@ -220,7 +253,6 @@ main {
   flex-direction: column;
   align-items: flex-start;
 }
-
 .contact-form label {
   display: block;
   margin-bottom: 0.3rem;
@@ -230,7 +262,6 @@ main {
   text-align: left;
   margin-left: 0.2rem;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -244,13 +275,11 @@ main {
   color: #222;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #b0b7c3;
   opacity: 1;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
@@ -258,12 +287,10 @@ main {
   box-shadow: 0 0 0 2px rgba(79, 140, 255, 0.08);
   background: #fff;
 }
-
 .contact-form textarea {
   min-height: 90px;
   resize: vertical;
 }
-
 .contact-form button {
   background: #4f8cff;
   color: #fff;
@@ -274,21 +301,21 @@ main {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
-  width: 100px;
   margin-top: 0.2rem;
   margin-left: 0.1rem;
   text-align: center;
 }
-
 .contact-form button:hover {
   background: #2563eb;
   transform: translateY(-1px);
 }
-
 .contact-form button:active {
   transform: translateY(0);
 }
 
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
   padding: 2rem 0 1rem 0;
@@ -311,7 +338,9 @@ footer {
   height: 22px;
 }
 
-/* Responsive */
+/* =========================
+   MEDIA QUERIES
+   ========================= */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -367,6 +396,9 @@ footer {
   }
 }
 
+/* =========================
+   BOTÓN DE IDIOMA
+   ========================= */
 .btn-lang {
   display: flex;
   align-items: center;
@@ -386,4 +418,149 @@ footer {
 #lang-icon {
   font-size: 1.2em;
   margin-right: 0.4em;
+}
+
+/* =========================
+   MENÚ LATERAL MOBILE
+   ========================= */
+@media (max-width: 767px) {
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 120;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    transition: z-index 0.2s;
+  }
+  .mobile-menu-toggle .bar {
+    width: 28px;
+    height: 3px;
+    background: #222;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    display: block;
+  }
+  .mobile-menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  /* Overlay oscuro */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.28);
+    z-index: 110;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Menú lateral */
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    width: 82vw;
+    max-width: 340px;
+    background: #f7f8f9;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.04);
+    z-index: 130;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    display: flex;
+    flex-direction: column;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  }
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .mobile-menu li {
+    margin-bottom: 2.2rem;
+    width: 100%;
+  }
+  .mobile-menu li:last-child {
+    margin-bottom: 0;
+  }
+  .mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #181b1f;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 16px;
+    transition: background 0.18s;
+  }
+  .mobile-link .icon {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    min-width: 28px;
+  }
+  .mobile-link:active,
+  .mobile-link:focus,
+  .mobile-link:hover {
+    background: #eceff1;
+    color: #111;
+  }
+  /* Oculta el menú de escritorio en mobile */
+  .navbar, .nav-links, .btn-resume, .btn-lang {
+    display: none !important;
+  }
+}
+
+/* Oculta el menú mobile en desktop */
+@media (min-width: 768px) {
+  .mobile-menu,
+  .mobile-menu-toggle,
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(1.3rem, 5vw + 0.7rem, 2.1rem);
+    text-align: center;
+  }
+  .hero-img img {
+    width: clamp(90px, 45vw, 170px); /* Escala fluida en tablets y móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: clamp(1.1rem, 7vw + 0.5rem, 1.5rem);
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+  .hero-img img {
+    width: clamp(70px, 60vw, 120px); /* Más pequeño en móviles */
+  }
 }
