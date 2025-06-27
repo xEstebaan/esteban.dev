@@ -43,7 +43,7 @@ Este es mi espacio en la web donde comparto mis proyectos, habilidades y formas 
 ## 📸 Preview
 
 <p align="center">
-  <img src="assets/project1.png" alt="Preview" width="70%"/>
+  <img src="assets/preview.png" alt="Preview" width="70%"/>
 </p>
 
 ---
