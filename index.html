@@ -1,135 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Esteban</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Esteban</div>
-      <ul class="nav-links">
-        <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
-        <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
-        <li><a href="#" class="btn-resume" data-i18n="nav.home">Inicio</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio de Esteban</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Esteban</div>
+        <ul class="nav-links">
+          <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+          <li>
+            <a href="#" class="btn-resume" data-i18n="nav.home">Inicio</a>
+          </li>
+          <li>
+            <button id="lang-btn" class="btn-lang" type="button">
+              <span id="lang-icon" aria-hidden="true">🌐</span>
+              <span id="lang-label">ES</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-img">
+          <img src="assets/avatar.svg" alt="Ilustración de Esteban" />
+        </div>
+        <div class="hero-content">
+          <h1 data-i18n="hero.title">
+            Hola, soy Esteban, un <br /><span>Desarrollador de Software</span>
+          </h1>
+          <p data-i18n="hero.desc"></p>
+          <a href="#proyectos" class="btn-primary" data-i18n="hero.btn"
+            >Ver Proyectos</a
+          >
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h2 data-i18n="about.title">Sobre Mí</h2>
+        <p data-i18n="about.desc">
+          Estudiante de Análisis y Desarrollo de Software en el SENA, con
+          enfoque en desarrollo backend. Complementé mi formación con un
+          bootcamp intensivo de programación en Talentotech (2024), donde
+          profundicé en Python. Me considero una persona autodidacta, curiosa y
+          comprometida con el aprendizaje constante. Actualmente estoy en
+          búsqueda de una oportunidad para realizar mi etapa práctica y aplicar
+          mis conocimientos en un entorno real de desarrollo.
+        </p>
+      </section>
+      <section id="proyectos" class="projects-section">
+        <div class="container">
+          <h2 class="projects-title" data-i18n="projects.title">Proyectos</h2>
+
+          <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+              <div class="project-image-container">
+                <img
+                  src="assets/project1.png"
+                  alt="Proyecto 1"
+                  class="project-image"
+                />
+                <div class="project-image-overlay"></div>
+              </div>
+              <div class="project-header">
+                <h3 class="project-title" data-i18n="projects.1.title">
+                  Sistema de Gestión de Inventario para Taller de Ornamentación
+                  – Flask
+                </h3>
+                <p class="project-description" data-i18n="projects.1.desc">
+                  Desarrollo de una aplicación web para gestionar materiales en
+                  un taller de ornamentación. El sistema permite registrar
+                  entradas y salidas de inventario, controlar stock, emitir
+                  reportes. Incluye autenticación de usuarios, control de roles
+                  (administrador y operador).
+                </p>
+              </div>
+              <div class="project-content">
+                <div class="project-tech-container">
+                  <span class="project-tech-badge">Flask</span>
+                  <span class="project-tech-badge">SQLite</span>
+                  <span class="project-tech-badge">SQLAlchemy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <h2 data-i18n="skills.title">Tecnologías y Herramientas</h2>
+        <div class="skills-list">
+          <span>Python</span>
+          <span>Git</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Java (Aprendiendo)</span>
+          <span>SQL (Aprendiendo)</span>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <form
+          action="https://formspree.io/f/xkgbkkkn"
+          method="POST"
+          class="contact-form"
+        >
+          <label data-i18n="contact.name" for="name">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Tu nombre"
+          />
+
+          <label data-i18n="contact.email" for="email">Correo</label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            required
+            placeholder="usuarios@ejemplo.com"
+          />
+
+          <label data-i18n="contact.message" for="message">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+
+          <input type="text" name="_honey" style="display: none" />
+
+          <button data-i18n="contact.send" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-social">
+        <a
+          href="https://www.linkedin.com/in/estebanb-dev/"
+          aria-label="LinkedIn"
+          ><img src="assets/linkedin.svg" alt="LinkedIn"
+        /></a>
+        <a href="https://github.com/xEstebaan" aria-label="GitHub"
+          ><img src="assets/github-mark.svg" alt="GitHub"
+        /></a>
+      </div>
+      <p>© 2025 Esteban. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ======= MENÚ LATERAL MOBILE ======= -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <button
+      id="mobile-menu-toggle"
+      class="mobile-menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <ul>
         <li>
-          <button id="lang-btn" class="btn-lang" type="button">
-            <span id="lang-icon" aria-hidden="true">🌐</span>
-            <span id="lang-label">ES</span>
-          </button>
+          <a href="#" class="mobile-link"
+            ><span class="icon">
+              <!-- Home icon -->
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="#181b1f"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 10.75V19a2 2 0 0 0 2 2h3.25a.75.75 0 0 0 .75-.75v-4.5A.75.75 0 0 1 9.75 15h4.5a.75.75 0 0 1 .75.75v4.5c0 .414.336.75.75.75H19a2 2 0 0 0 2-2v-8.25a2 2 0 0 0-.66-1.48l-7-6.3a2 2 0 0 0-2.64 0l-7 6.3A2 2 0 0 0 3 10.75Z"
+                  fill="#181b1f"
+                />
+              </svg>
+            </span>
+            <span>Home</span></a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="mobile-link"
+            ><span class="icon">
+              <!-- Code icon -->
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#181b1f"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </span>
+            <span>Projects</span></a
+          >
+        </li>
+        <li>
+          <a href="#skills" class="mobile-link"
+            ><span class="icon">
+              <!-- Code icon (same as above) -->
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#181b1f"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </span>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="mobile-link"
+            ><span class="icon">
+              <!-- Mail icon -->
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#181b1f"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <polyline points="22,7 12,13 2,7" />
+              </svg>
+            </span>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <a href="#" class="mobile-link lang-link"
+            ><span class="icon">
+              <!-- Globe icon -->
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#181b1f"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"
+                />
+              </svg>
+            </span>
+            <span>Language</span></a
+          >
         </li>
       </ul>
     </nav>
-  </header> 
 
-  <main>
-    <section class="hero">
-      <div class="hero-img">
-        <img src="assets/avatar.svg" alt="Ilustración de Esteban" />
-      </div>
-      <div class="hero-content">
-        <h1 data-i18n="hero.title">Hola, soy Esteban, un <br><span>Desarrollador de Software</span></h1>
-        <p data-i18n="hero.desc">Soy un desarrollador de software apasionado con enfoque en crear aplicaciones innovadoras y fáciles de usar. Disfruto trabajando en proyectos desafiantes y colaborando con equipos para construir soluciones impactantes.</p>
-        <a href="#projects" class="btn-primary" data-i18n="hero.btn">Ver Proyectos</a>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <h2 data-i18n="about.title">Sobre Mí</h2>
-      <p data-i18n="about.desc">Estudiante de Análisis y Desarrollo de Software en el SENA, con enfoque en desarrollo backend. Complementé mi formación con un bootcamp intensivo de programación en Talentotech (2024), donde profundicé en Python. Me considero una persona autodidacta, curiosa y comprometida con el aprendizaje constante.  Actualmente estoy en búsqueda de una oportunidad para realizar mi etapa práctica y aplicar mis conocimientos en un entorno real de desarrollo.</p>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2 data-i18n="projects.title">Proyectos</h2>
-      <div class="project-list">
-        <div class="project-card">
-          <img src="assets/project1.png" alt="Sitio Web de Inventario" />
-          <h3 data-i18n="projects.1.title">Sistema de Gestión de Inventario para Taller de Ornamentación – Flask</h3>
-          <p data-i18n="projects.1.desc">Desarrollo de una aplicación web para gestionar materiales en un taller de ornamentación. El sistema permite registrar entradas y salidas de inventario, controlar stock, emitir reportes y visualizar alertas por bajo inventario. Implementado con Flask, SQLite y SQLAlchemy siguiendo el patrón MVC. Incluye autenticación de usuarios, control de roles (administrador y operador)</p>
-        </div>
-
-    </section>
-
-    <section id="skills" class="skills">
-      <h2 data-i18n="skills.title">Tecnologías y Herramientas</h2>
-      <div class="skills-list">
-        <span>Python</span>
-        <span>Git</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Java (Aprendiendo)</span>
-        <span>SQL (Aprendiendo)</span>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      
-    <h2 data-i18n="contact.title">Contacto</h2>
-    <form action="https://formspree.io/f/xkgbkkkn" method="POST" class="contact-form">
-  <label data-i18n="contact.name" for="name">Nombre</label>
-  <input type="text" id="name" name="name" required placeholder="Tu nombre">
-
-  <label data-i18n="contact.email" for="email">Correo</label>
-  <input type="email" id="email" name="_replyto" required placeholder="usuarios@ejemplo.com">
-
-  <label data-i18n="contact.message" for="message">Mensaje</label>
-  <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí..."></textarea>
-
-  <input type="text" name="_honey" style="display:none">
-
-
-  <button data-i18n="contact.send" type="submit">Enviar</button>
-</form>
-
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/esteban-bernal-4674b336a/" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
-      <a href="https://github.com/xEstebaan" aria-label="GitHub"><img src="assets/github-mark.svg" alt="GitHub"></a>
-    </div>
-    <p>© 2025 Esteban. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- ======= MENÚ LATERAL MOBILE ======= -->
-  <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
-  <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <ul>
-      <li><a href="#" class="mobile-link"><span class="icon">  
-        <!-- Home icon -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#181b1f" xmlns="http://www.w3.org/2000/svg"><path d="M3 10.75V19a2 2 0 0 0 2 2h3.25a.75.75 0 0 0 .75-.75v-4.5A.75.75 0 0 1 9.75 15h4.5a.75.75 0 0 1 .75.75v4.5c0 .414.336.75.75.75H19a2 2 0 0 0 2-2v-8.25a2 2 0 0 0-.66-1.48l-7-6.3a2 2 0 0 0-2.64 0l-7 6.3A2 2 0 0 0 3 10.75Z" fill="#181b1f"/></svg>
-        </span> <span>Home</span></a></li>
-      <li><a href="#projects" class="mobile-link"><span class="icon">
-        <!-- Code icon -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </span> <span>Projects</span></a></li>
-      <li><a href="#skills" class="mobile-link"><span class="icon">
-        <!-- Code icon (same as above) -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </span> <span>Skills</span></a></li>
-      <li><a href="#contact" class="mobile-link"><span class="icon">
-        <!-- Mail icon -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
-        </span> <span>Contact</span></a></li>
-      <li><a href="#" class="mobile-link lang-link"><span class="icon">
-        <!-- Globe icon -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#181b1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
-        </span> <span>Language</span></a></li>
-    </ul>
-  </nav>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

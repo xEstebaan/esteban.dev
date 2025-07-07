@@ -169,50 +169,117 @@ main {
 /* =========================
    SECCIÓN PROJECTS
    ========================= */
-.projects {
-  margin-bottom: 2.5rem;
+.projects-section {
+  padding: 5rem 1.5rem;
 }
-.projects h2 {
-  font-size: clamp(1.3rem, 2.5vw + 0.7rem, 2.1rem);
-  margin-bottom: 1.2rem;
-  text-align: left;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.project-list {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+
+.projects-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: #222;
+  margin-bottom: 3rem;
 }
+
+/* Responsive title */
+@media (min-width: 768px) {
+  .projects-title {
+    font-size: 2.25rem;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .project-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(80, 120, 200, 0.07);
-  padding: 1.2rem;
-  flex: 1 1 260px;
-  min-width: 260px;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: box-shadow 0.2s;
+  background-color: rgba(227, 233, 233, 0.5);
+  border: 1px solid #102e55;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
-.project-card:hover {
-  box-shadow: 0 4px 16px rgba(80, 120, 200, 0.13);
+
+.project-image-container {
+  position: relative;
+  overflow: hidden;
 }
-.project-card img {
+
+.project-image {
   width: 100%;
-  height: 90px;
+  height: 12rem;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-  background: #f3f6fa;
+  transition: transform 0.3s ease;
+  border-radius: 0.5rem;
 }
-.project-card h3 {
-  font-size: clamp(1.05rem, 1.2vw + 0.7rem, 1.25rem);
-  margin-bottom: 0.4rem;
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
-.project-card p {
-  color: #555;
-  font-size: 0.97rem;
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+}
+
+.project-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.project-title {
+  color: rgb(17, 17, 17);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  color: #444;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.project-tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tech-badge {
+  background-color: #ececec;
+  color: #222;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 /* =========================
@@ -472,7 +539,7 @@ footer {
     background: #222;
     margin: 4px 0;
     border-radius: 2px;
-    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
     display: block;
   }
   .mobile-menu-toggle.active .bar:nth-child(1) {
@@ -487,8 +554,11 @@ footer {
   /* Overlay oscuro */
   .mobile-menu-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.28);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.28);
     z-index: 110;
     opacity: 0;
     pointer-events: none;
@@ -501,15 +571,16 @@ footer {
   /* Menú lateral */
   .mobile-menu {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 82vw;
     max-width: 340px;
     background: #f7f8f9;
-    box-shadow: 2px 0 16px rgba(0,0,0,0.04);
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.04);
     z-index: 130;
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
     display: flex;
     flex-direction: column;
     padding: 2.2rem 1.5rem 1.5rem 1.5rem;
@@ -555,7 +626,10 @@ footer {
     color: #111;
   }
   /* Oculta el menú de escritorio en mobile */
-  .navbar, .nav-links, .btn-resume, .btn-lang {
+  .navbar,
+  .nav-links,
+  .btn-resume,
+  .btn-lang {
     display: none !important;
   }
 }
